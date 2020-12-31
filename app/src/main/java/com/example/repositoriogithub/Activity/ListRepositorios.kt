@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -62,7 +63,7 @@ class ListRepositorios : AppCompatActivity() {
 
             override fun onFailure(call: Call<ListItens>, t: Throwable) {
                 mProgressBarRespositorio!!.visibility = View.GONE
-                Log.i("Error Retrofit ", "Error $t")
+                Toast.makeText(applicationContext,"Erro na busca de dados",Toast.LENGTH_LONG).show()
             }
         })
     }

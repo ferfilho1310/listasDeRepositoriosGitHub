@@ -53,7 +53,7 @@ class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>(
                 .load(repositorio.owner.avatarUrl)
                 .resize(180, 180)
                 .centerCrop()
-                .error(R.drawable.imagem_ilustrativa_policia_civil)
+                .error(R.drawable.image_error)
                 .into(img_autor_repositorio)
         }
     }

@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:src="@drawable/imagem_ilustrativa_policia_civil" />
+            android:src="@drawable/image_error" />
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -65,7 +65,7 @@ class ListRepositoriosActView : AppCompatActivity() {
                         .subscribe { it ->
                             mProgressBarRespositorio!!.visibility = View.GONE
                             adapterRepositorio!!.adicionarRepositoriosLista(it!!.items!!
-                                .sortedBy { it.owner.login.toLowerCase() }
+                                .sortedByDescending { it.stargazersCount }
                                 .filter { it.stargazersCount > quantidadeEstrelasRespositorio })
                         }
                 }

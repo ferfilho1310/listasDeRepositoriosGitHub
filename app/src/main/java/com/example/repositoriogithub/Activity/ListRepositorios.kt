@@ -23,7 +23,6 @@ class ListRepositorios : AppCompatActivity() {
     var adapterRepositorio: AdapterRepositorio? = null
     var linearLayoutManager: LinearLayoutManager? = null
     var mProgressBarRespositorio: ProgressBar? = null
-    var isScrolling = false
 
     var currentItens: Int = 0
     var totalItens: Int = 0

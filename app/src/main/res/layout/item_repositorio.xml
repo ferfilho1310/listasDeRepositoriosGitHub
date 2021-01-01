@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Autor"
+                android:text="@string/autor"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
 
@@ -44,19 +44,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Fernando Antônio da Silva Filho"
+                android:text="@string/fernando_ant_nio_da_silva_filho"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
         </LinearLayout>
 
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Nome do repositório"
+            android:text="@string/nome_do_reposit_rio"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -65,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="android_arquitect"
+            android:text="@string/android_arquitect"
             android:textColor="@color/black" />
 
         <LinearLayout
@@ -85,7 +83,7 @@
                 android:id="@+id/txt_qtd_fork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10365"
+                android:text="@string/qtd_fork"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -105,7 +103,7 @@
                 android:id="@+id/txt_star_repositorio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="23"
+                android:text="@string/star_repositorio"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:textColor="@color/black" />

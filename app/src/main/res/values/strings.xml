@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">repositorioGitHub</string>
+    <string name="autor">Autor</string>
+    <string name="fernando_ant_nio_da_silva_filho">Fernando Antônio da Silva Filho</string>
+    <string name="nome_do_reposit_rio">Nome do repositório</string>
+    <string name="android_arquitect">android_arquitect</string>
+    <string name="qtd_fork">10365</string>
+    <string name="star_repositorio">23</string>
 </resources>

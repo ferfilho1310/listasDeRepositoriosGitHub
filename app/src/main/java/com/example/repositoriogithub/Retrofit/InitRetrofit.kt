@@ -8,7 +8,7 @@ class InitRetrofit {
     companion object{
         var URL = "https://api.github.com/search/"
         var STARS = "stars"
-        var PAGE = "1"
+        var PAGE = 0
 
         fun init(): Retrofit {
             return Retrofit.Builder()

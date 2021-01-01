@@ -15,7 +15,6 @@ class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>(
     var listBebidas: ArrayList<Item> = arrayListOf()
 
     fun adicionarRepositoriosLista(itens: List<Item>) {
-        listBebidas.clear();
         listBebidas.addAll(itens)
         notifyDataSetChanged()
     }

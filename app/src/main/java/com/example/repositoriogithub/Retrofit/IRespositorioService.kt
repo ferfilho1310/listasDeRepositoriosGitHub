@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface IRespositorioService {
 
     @GET("repositories?q=language:kotlin")
-    fun getListRepositorios(@Query("sort") sort : String,@Query("page") page : String ) : Call<ListItens>
+    fun getListRepositorios(@Query("sort") sort : String, @Query("page") page : String ) : Call<ListItens>
 }

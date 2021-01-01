@@ -28,6 +28,8 @@ class ListRepositoriosActView : AppCompatActivity() {
     var totalItens: Int = 0
     var scrollOutIten: Int = 0
 
+    var quantidadeEstrelasRespositorio: Int = 3000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,7 +64,9 @@ class ListRepositoriosActView : AppCompatActivity() {
                     Observable.fromArray(response.body())
                         .subscribe { it ->
                             mProgressBarRespositorio!!.visibility = View.GONE
-                            adapterRepositorio!!.adicionarRepositoriosLista(it!!.items!!.sortedByDescending { it.stargazersCount })
+                            adapterRepositorio!!.adicionarRepositoriosLista(it!!.items!!
+                                .sortedBy { it.owner.login.toLowerCase() }
+                                .filter { it.stargazersCount > quantidadeEstrelasRespositorio })
                         }
                 }
             }

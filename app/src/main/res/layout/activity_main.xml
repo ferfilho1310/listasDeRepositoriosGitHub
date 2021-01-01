@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D3D3D3"
-    tools:context=".Activity.ListRepositorios">
+    tools:context=".Activity.ListRepositoriosActView">
 
     <ProgressBar
         android:id="@+id/prg_progrressBarListRepositorio"

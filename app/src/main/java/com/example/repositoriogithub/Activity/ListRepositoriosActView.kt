@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListRepositorios : AppCompatActivity() {
+class ListRepositoriosActView : AppCompatActivity() {
 
     var mRcMostraRespostiorios: RecyclerView? = null
     var adapterRepositorio: AdapterRepositorio? = null

@@ -7,7 +7,6 @@ Aplicativo para buscar repositórios da linguagem kotlin na API do github.
 * Android Studio
 * Picasso
 * Retrofit
-* RxAndroid
 * Kotlin
 * JUnit
 

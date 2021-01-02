@@ -42,7 +42,7 @@ class ListRepositoriosActView : AppCompatActivity() {
         mRcMostraRespostiorios?.adapter = adapterRepositorio
         mRcMostraRespostiorios?.setHasFixedSize(true)
 
-        mProgressBarRespositorio!!.visibility = View.VISIBLE
+        mProgressBarRespositorio?.visibility = View.VISIBLE
 
         buscarDadosRespositorio()
         adicionarItensRecyclerViewScrollEnd()

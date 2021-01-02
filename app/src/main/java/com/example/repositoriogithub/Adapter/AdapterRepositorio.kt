@@ -22,8 +22,7 @@ class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Repositorio {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_repositorio, parent, false)
-        val holder = Repositorio(view)
-        return holder
+        return Repositorio(view)
     }
 
     override fun onBindViewHolder(holder: Repositorio, position: Int) {

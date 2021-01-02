@@ -7,14 +7,14 @@ Aplicativo para buscar repositórios da linguagem kotlin na API do github.
 * Android Studio
 * Picasso
 * Retrofit
-* RxAndroid
 * Kotlin
+* RxAndroid
 * JUnit
 
 <strong>Imagens da aplicação</strong>
 
 * Tela no formato retrato
-<img src="https://user-images.githubusercontent.com/37080995/103424784-26e5d300-4b8d-11eb-934d-f70e447a8510.jpg" width="250" height="550">
+<img src="https://user-images.githubusercontent.com/37080995/103466445-08fea680-4d24-11eb-91f2-a1c156af47fe.jpg" width="350" height="550" >
 
 * Tela no formato paisagem
-<img src="https://user-images.githubusercontent.com/37080995/103424953-066a4880-4b8e-11eb-9e28-8addfe659003.jpg" width="500" height="300">
+<img src="https://user-images.githubusercontent.com/37080995/103466442-07cd7980-4d24-11eb-8e99-2472353f0f83.jpg" width="550" height="350">

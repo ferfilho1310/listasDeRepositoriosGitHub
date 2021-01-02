@@ -1,47 +1,47 @@
 package com.example.repositoriogithub.Activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.repositoriogithub.Adapter.AdapterRepositorio
-import com.example.repositoriogithub.Model.ListItens
 import com.example.repositoriogithub.R
 import com.example.repositoriogithub.Retrofit.IRespositorioService
 import com.example.repositoriogithub.Retrofit.InitRetrofit
-import io.reactivex.rxjava3.core.Observable
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class ListRepositoriosActView : AppCompatActivity() {
 
     var mRcMostraRespostiorios: RecyclerView? = null
     var adapterRepositorio: AdapterRepositorio? = null
-    var linearLayoutManager: LinearLayoutManager? = null
+    var linearLayoutManager: GridLayoutManager? = null
     var mProgressBarRespositorio: ProgressBar? = null
 
     var currentItens: Int = 0
     var totalItens: Int = 0
     var scrollOutIten: Int = 0
 
-    var quantidadeEstrelasRespositorio: Int = 3000
+    var mostrarRepositoriosPorQuantidadeEstrelas: Int = 3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.lista_repositorios_github)
 
         mRcMostraRespostiorios = findViewById(R.id.rc_repositorio_git)
-        mProgressBarRespositorio = findViewById(R.id.prg_progrressBarListRepositorio)
+        mProgressBarRespositorio = findViewById(R.id.prg_ListRepositorio)
 
         adapterRepositorio = AdapterRepositorio()
-        linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        mRcMostraRespostiorios?.layoutManager =
+            GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
 
-        mRcMostraRespostiorios!!.adapter = adapterRepositorio
-        mRcMostraRespostiorios!!.setHasFixedSize(true)
+        mRcMostraRespostiorios?.adapter = adapterRepositorio
+        mRcMostraRespostiorios?.setHasFixedSize(true)
 
         mProgressBarRespositorio!!.visibility = View.VISIBLE
 
@@ -49,34 +49,25 @@ class ListRepositoriosActView : AppCompatActivity() {
         adicionarItensRecyclerViewScrollEnd()
     }
 
+    @SuppressLint("CheckResult")
     fun buscarDadosRespositorio() {
 
         val iniciaRetrofit = InitRetrofit.init().create(IRespositorioService::class.java)
         val callListRepositorio =
             iniciaRetrofit.getListRepositorios(InitRetrofit.STARS, InitRetrofit.PAGE.toString())
 
-        callListRepositorio.enqueue(object : Callback<ListItens> {
-            override fun onResponse(
-                call: Call<ListItens>,
-                response: Response<ListItens>
-            ) {
-                if (response.isSuccessful) {
-                    Observable.fromArray(response.body())
-                        .subscribe { it ->
-                            mProgressBarRespositorio!!.visibility = View.GONE
-                            adapterRepositorio!!.adicionarRepositoriosLista(it!!.items!!
-                                .sortedByDescending { it.stargazersCount }
-                                .filter { it.stargazersCount > quantidadeEstrelasRespositorio })
-                        }
-                }
-            }
-
-            override fun onFailure(call: Call<ListItens>, t: Throwable) {
-                mProgressBarRespositorio!!.visibility = View.GONE
-                Toast.makeText(applicationContext, "Erro na busca de dados", Toast.LENGTH_LONG)
-                    .show()
-            }
-        })
+        callListRepositorio.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ it ->
+                mProgressBarRespositorio?.visibility = View.GONE
+                adapterRepositorio?.adicionarRepositoriosLista(it?.items!!
+                    .sortedByDescending { it.stargazersCount }
+                    .filter { it.stargazersCount > mostrarRepositoriosPorQuantidadeEstrelas })
+            }, {
+                Log.i("Error", "Erro ao buscar os dados $it")
+            }, {
+                adapterRepositorio?.notifyDataSetChanged()
+            })
     }
 
     fun adicionarItensRecyclerViewScrollEnd() {

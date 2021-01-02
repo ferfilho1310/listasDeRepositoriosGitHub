@@ -31,7 +31,7 @@ class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>(
     }
 
     override fun getItemCount(): Int {
-        return listBebidas!!.size
+        return listBebidas.size
     }
 
     class Repositorio(itemView: View) : RecyclerView.ViewHolder(itemView) {

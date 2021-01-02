@@ -20,7 +20,6 @@ class ListRepositoriosActView : AppCompatActivity() {
 
     var mRcMostraRespostiorios: RecyclerView? = null
     var adapterRepositorio: AdapterRepositorio? = null
-    var linearLayoutManager: GridLayoutManager? = null
     var mProgressBarRespositorio: ProgressBar? = null
 
     var currentItens: Int = 0

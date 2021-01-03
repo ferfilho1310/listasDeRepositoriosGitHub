@@ -12,10 +12,10 @@ import com.squareup.picasso.Picasso
 
 class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>() {
 
-    var listBebidas: ArrayList<Item> = arrayListOf()
+    var listRespositoriosGitHub: ArrayList<Item> = arrayListOf()
 
-    fun adicionarRepositoriosLista(itens: List<Item>) {
-        listBebidas.addAll(itens)
+    fun adicionarRepositoriosLista(itemRepositorioGitHub: List<Item>) {
+        listRespositoriosGitHub.addAll(itemRepositorioGitHub)
         notifyDataSetChanged()
     }
 
@@ -26,11 +26,11 @@ class AdapterRepositorio : RecyclerView.Adapter<AdapterRepositorio.Repositorio>(
     }
 
     override fun onBindViewHolder(holder: Repositorio, position: Int) {
-        holder.bind(listBebidas[position])
+        holder.bind(listRespositoriosGitHub[position])
     }
 
     override fun getItemCount(): Int {
-        return listBebidas.size
+        return listRespositoriosGitHub.size
     }
 
     class Repositorio(itemView: View) : RecyclerView.ViewHolder(itemView) {

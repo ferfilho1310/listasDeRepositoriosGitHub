@@ -13,7 +13,7 @@ Aplicativo para buscar repositórios da linguagem kotlin na API do github.
 <strong>Imagens da aplicação</strong>
 
 * Tela no formato retrato
-<img src="https://user-images.githubusercontent.com/37080995/103466445-08fea680-4d24-11eb-91f2-a1c156af47fe.jpg" width="350" height="550" >
+<img src="https://user-images.githubusercontent.com/37080995/103490412-5e0cec00-4dfa-11eb-98c8-9dcdd90f07dd.jpg" width="350" height="550" >
 
 * Tela no formato paisagem
-<img src="https://user-images.githubusercontent.com/37080995/103466442-07cd7980-4d24-11eb-8e99-2472353f0f83.jpg" width="550" height="350">
+<img src="https://user-images.githubusercontent.com/37080995/103490413-5fd6af80-4dfa-11eb-88b2-780c2b0bf332.jpg" width="550" height="350">
